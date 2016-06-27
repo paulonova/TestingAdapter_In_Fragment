@@ -32,7 +32,12 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
         @Override
         public void onActivityCreated(Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
-            ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.Planets, android.R.layout.simple_list_item_1);
+
+            //This adapter uses to create a listView with string.xml resources..
+            //ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.Planets, android.R.layout.simple_list_item_1);
+
+            //This adapter uses to set an ArrayList into ListView.
+            ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1, contactList);
             setListAdapter(adapter);
             getListView().setOnItemClickListener(this);
         }
